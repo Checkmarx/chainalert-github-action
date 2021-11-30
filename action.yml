@@ -1,5 +1,5 @@
 name: 'ChainAlert'
-description: ''
+description: 'Action for opting in to ChainAlert service'
 author: 'Checkmarx'
 inputs:
   file:

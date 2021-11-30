@@ -11,9 +11,17 @@ async function main() {
 
         let githubUsername = github.context.repo.owner;
         let githubRepository = github.context.repo.repo;
+        let gitUrl = `https://github.com/${githubUsername}/${githubRepository}`
+
+        try {
+            await axios.head(gitUrl);
+        } catch (e) {
+            core.setFailed('Private GitHub repositories are not supported at the moment');
+            return;
+        }
 
         let data = {
-            'git_url': `https://github.com/${githubUsername}/${githubRepository}`,
+            'git_url': gitUrl,
             'package_json': packageJson
         }
 
