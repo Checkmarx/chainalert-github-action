@@ -1,0 +1,15 @@
+name: 'ChainAlert'
+description: ''
+author: 'Checkmarx'
+inputs:
+  file:
+    required: false
+    default: package.json
+    description: "package.json file path"
+
+branding:
+  icon: 'package'
+  color: 'green'
+runs:
+  using: 'node12'
+  main: 'index.js'
