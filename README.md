@@ -23,11 +23,11 @@ Once ChainAlert detect one of these suspicious activities, it will open automati
 ### How Do I Opt In?
 
 Simply add the following GitHub action to your workflow, we will take it from there:
-- 💡 This service is available for public GitHub projects only
 
 ```yml
-
+ - uses: checkmarx/chainalert-github-action@v1
 ```
+- 💡 This service is only available for public GitHub projects
 
 
 ### Features
@@ -41,5 +41,5 @@ Simply add the following GitHub action to your workflow, we will take it from th
 
 ### Contact
 
-for any further question please feel free to open an issue or contact us at <@checmarx.com> 
+for any further question please feel free to open an issue or contact us at <@checkmarx.com> 
 
