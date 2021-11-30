@@ -19,13 +19,15 @@ Once ChainAlert detect one of these suspicious activities, it will open automati
 - The package's GitHub repo, to notify the maintainers of that activity
 - Any package dependents' GitHub repo who's opted in
 
+![Frame 240](https://user-images.githubusercontent.com/1287098/144136718-200904ca-c01f-4bd8-825a-add9762e40dc.png)
+
 
 ### How Do I Opt In?
 
 Simply add the following GitHub action to your workflow, we will take it from there:
 
 ```yml
- - uses: checkmarx/chainalert-github-action@v1
+ - uses: checkmarx/chainalert-github-action@v0.0.1
 ```
 - 💡 This service is only available for public GitHub projects
 
