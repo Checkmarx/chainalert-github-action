@@ -24,10 +24,26 @@ Once ChainAlert detect one of these suspicious activities, it will open automati
 
 ### How Do I Opt In?
 
-Simply add the following GitHub action to your workflow, we will take it from there:
+Simply add the following workflow to your `.github/workflows` folder, we will take it from there:
 
 ```yml
- - uses: checkmarx/chainalert-github-action@v0.0.1
+name: "ChainAlert"
+
+on:
+  push:
+    # Run when the master is changed
+    branches: [ master ]
+  schedule:
+    # Run every day at midnight
+    - cron: '0 1 * * *'
+
+jobs:
+  chainalert:
+    name: ChainAlert
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: checkmarx/chainalert-github-action@master
 ```
 - 💡 This service is only available for public GitHub projects
 
