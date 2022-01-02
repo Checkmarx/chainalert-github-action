@@ -15,6 +15,7 @@ Learning the lessons of these supply chain incidents we've created **ChainAlert*
 ChainAlert cloud service continuously monitor and analyse new releases of packages:
 - Detection of newly added auto install scripts such as `install`, `preinstall`, `postinstall` 
 - Checking the consistency of the version and if presented in the package's linked git repository tags
+- Changes in package maintainers 
 
 ![Group 468](https://user-images.githubusercontent.com/1287098/144894054-1ca132cf-e3f2-448a-bfdb-d04b00cbd02c.png)
 
@@ -29,17 +30,15 @@ If ChainAlert finds a suspicious activity of a package, it will automatically op
 
 ### How Do I Opt In?
 
-You need to add our [GitHub action](https://github.com/marketplace/actions/chainalert) to your project. If you already have an existing workflow, add the following step:
+You need to add our [GitHub action](https://github.com/marketplace/actions/chainalert) to your project as a cron job.
 
-```yml
- - uses: checkmarx/chainalert-github-action@v1
-```
-
-Alternatively, create a dedicated workflow file under `.github/workflows/chainalert.yml`
+Create a dedicated workflow file under `.github/workflows/chainalert.yml`
 
 ```yml
 name: ChainAlert
 on:
+  schedule:
+    - cron:  '0 0 * * *'
   push:
     branches: [ master ]
 jobs:
@@ -50,6 +49,7 @@ jobs:
       - uses: checkmarx/chainalert-github-action@v1
 ```
 - 💡 This action and service are only available for public GitHub projects
+- 💡 If our service stops receiving for more than 2 days, we will automatically opt you out
 
 
 ### Features
