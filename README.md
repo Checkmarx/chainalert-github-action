@@ -3,6 +3,7 @@
 ### ChainAlert
 A free service by [Checkmarx](https://checkmarx.com/) for the Open Source community that scans popular packages and alerts in cases there is a suspicion those packages' accounts were hacked.
 
+Add ChainAlert's GitHub action to your repository to be notified in case of a suspected takeover of one of your dependencies. Giving you the chance to rapidly respond and protect yourself and your users.
 ### The Need
 
 Recent package takeover incidents such as [coa](https://checkmarx.com/blog/attackers-write-bugs-as-well/) and [ua-parser-js](https://checkmarx.com/blog/uaparser-js-attack-preparations/) have stressed the need for an alarm system to alert developers and users.
